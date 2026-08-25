@@ -1,5 +1,7 @@
 # Clinical Trial Cell Population Analysis & Dashboard
 
+Link to deployment: [https://justinlu-teiko.streamlit.app/](https://justinlu-teiko.streamlit.app/)
+
 ## Setup Instructions
 
 This project runs automatically via GitHub Codespaces using the provided `Makefile`, which installs dependencies, sets up the database, performs the analysis, and generates an interactive dashboard.
