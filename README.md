@@ -44,8 +44,13 @@ Looking into the future, if patient or sample details need to be updated, this a
 
 `load.py` - This runs the ETL pipeline to convert the CSV into our structured SQLite database with the above schema. It splits up the creation of the DB schema and reading from CSV, placing them in the data/ folder.
 
-`app.py` - This conducts the analytics and creates the interactive dashboard using streamlit. Ingesting the data from the DB file, it caches results for performance. When creating each dashboard tab, the analysis is also conducted:
-> - Tab 1 (Part 2): Displays summary table with relative frequency of each cell population with the 5 desired columns of sample, total_count, population, count, and percentage.
-> - Tab 2 (Part 3): Performs statistical tests (Mann-Whitney U) to compare relative cell frequencies between responders and non-responders to determine significance, plotting it with boxplots. Filters allow for future exploration beyond listed requirement of melanoma, miraclib, and PBMC.
-> - Tab 3 (Part 4): Shows more information about the subset of the data explored (melanoma, miraclib, and PBMC), with the time_from_treatment being 0, and extra demographics about their project, sex, and response status.
-> - Tab 4 (Bonus): Displays matching rows for the bonus question, giving the average number of B cells.
+`analysis.py` - This conducts the analytics, ingesting the data from the DB and caches the results back in for performance.
+
+`app.py` - This takes the data transformed by `analysis.py` and generates the interactive dashboard for it.
+
+Tasks:
+> - Part 1: Accomplished in `load.py`
+> - Part 2: Creates summary table with relative frequency of each cell population with the 5 desired columns of sample, total_count, population, count, and percentage.
+> - Part 3: Performs statistical tests (Mann-Whitney U) to compare relative cell frequencies between responders and non-responders to determine significance, plotting it with boxplots. Filters allow for future exploration beyond listed requirement of melanoma, miraclib, and PBMC.
+> - Part 4: Explores more information about the subset of the data explored (melanoma, miraclib, and PBMC), with the time_from_treatment being 0, and extra demographics about their project, sex, and response status.
+> - Bonus: Calculates matching rows for the bonus question, giving the average number of B cells.
