@@ -2,6 +2,5 @@ pandas
 scipy
 matplotlib
 seaborn
-sqlite3
 plotly
 streamlit
